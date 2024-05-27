@@ -6,7 +6,7 @@ CREATE table if not exists Role (
 );
 
 -- Создание таблицы User
-CREATE table if not exists "User" (
+CREATE table if not exists "user" (
                         userId SERIAL PRIMARY KEY,
                         login VARCHAR(60),
                         password VARCHAR(40),
@@ -35,8 +35,8 @@ CREATE table if not exists Card (
                       assigneeId INT,
                       boardId INT,
                       statusId INT,
-                      FOREIGN KEY (authorId) REFERENCES "User"(userId),
-                      FOREIGN KEY (assigneeId) REFERENCES "User"(userId),
+                      FOREIGN KEY (authorId) REFERENCES "user"(userId),
+                      FOREIGN KEY (assigneeId) REFERENCES "user" (userId),
                       FOREIGN KEY (boardId) REFERENCES Board(boardId),
                       FOREIGN KEY (statusId) REFERENCES Status(statusId)
 );

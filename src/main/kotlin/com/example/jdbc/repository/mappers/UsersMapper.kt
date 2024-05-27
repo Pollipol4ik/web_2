@@ -18,7 +18,11 @@ class UsersMapper : RowMapper<User?> {
     @Throws(SQLException::class)
     override fun mapRow(rs: ResultSet, rowNum: Int): User {
         return User(
-            rs.getInt("id")
+            rs.getInt("userid"),
+            rs.getString("login"),
+            rs.getString("password"),
+            rs.getString("name"),
+            rs.getInt("roleid")
         )
     }
 }
